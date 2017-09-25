@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from .forms import SugestionForm
 
-from .models import Sugestion
+#from .models import Sugestion
 
 def index(request):
 	"""
@@ -20,5 +21,6 @@ def add_sugestion(request):
 	"""
 	Create a form to add a sugestion.
 	"""
+	form = SugestionForm()
 
-	return render(request, 'gatekeeper/add_sugestion.html')
+	return render(request, 'gatekeeper/add_sugestion.html', {'form':form})
