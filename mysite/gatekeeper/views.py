@@ -7,21 +7,22 @@ from django.utils import timezone
 
 from .models import Sugestion
 
-def index(request, Sugestion):
+def index(request):
 	"""
 	Renders the initial page
 	"""
-
 	all_sugestions = Sugestion.objects.all()
-	print(all_sugestions)
+	for sugestion in all_sugestions:
+		print(sugestion.id)
 
-	return render(request,'gatekeeper/index.html', all_sugestions)
+	return render(request,'gatekeeper/index.html', {'all_sugestions': all_sugestions} )
 
 def sugestions(request, sugestion_id):
 	"""
 	Renders a sugestion for a pitch.
 	"""
-	return HttpResponse("This is the sugestion number %s." % sugestion_id)
+	sugestion = Sugestion.objects.get(pk=sugestion_id)
+	return render(request, 'gatekeeper/sugestion_detail.html', { 'sugestion': sugestion })
 
 def add_sugestion(request):
 	"""

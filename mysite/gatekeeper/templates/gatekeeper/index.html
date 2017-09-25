@@ -7,12 +7,12 @@
 		<div class="col s12">
 			<div class="header">
 				<h1>Vigilante</h1>
-				<h2>Sugestão de Pautas</h2>			
+				<h2>Sugestão de Pautas</h2>	
 			</div>
 			<div class="last-entries">
 				<ul>
 					{% for sugestion in all_sugestions %}
-					<li>sugestion.title</li>
+					<li> <a href="/gatekeeper/{{ sugestion.id }}">{{ sugestion.title }}</a></li>
 					{% endfor %}
 				</ul>
 			</div>
