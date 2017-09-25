@@ -10,5 +10,6 @@ class SugestionForm(forms.ModelForm):
 		model = Sugestion
 		fields = {'title', 'description'}
 		widgets = {
-			'description': forms.Textarea(attrs={'class': 'materialize-textarea'})
+			'description': forms.Textarea(attrs={'class': 'materialize-textarea validate'}),
+			'title': forms.TextInput(attrs={'class': 'validate'})
 		}
