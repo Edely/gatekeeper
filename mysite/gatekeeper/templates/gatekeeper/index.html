@@ -25,10 +25,18 @@
 				<div class="col s12 m6">
 					<div class="card">
 						<div class="card-content">
-							<div class="card-title">{{ sugestion.title }} <span class="badge">{{ sugestion.id }}</span></div>
+							<div class="card-title">{{ sugestion.title }}
+							</div>
+							<span class="badge">{{ sugestion.id }}</span>
 							<p>{{ sugestion.description|truncatewords:30 }}</p>
 						</div>
-						<div class="card-action"><a href="/gatekeeper/{{ sugestion.id }}">Leia Mais</a></div>
+						<div class="card-action">
+							<a href="/gatekeeper/{{ sugestion.id }}">Leia Mais</a>
+							<span class="evaluation right">
+								<a href=""><i class="material-icons">arrow_upward</i></a>
+								<a href=""><i class="material-icons">arrow_downward</i></a>
+							</span>
+						</div>
 					</div>
 				</div>
 				{% endfor %}

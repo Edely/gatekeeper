@@ -3,9 +3,33 @@
 
 {% block content %}
 	<div class="container">
-		<h1>{{ sugestion.title }}</h1>
-		<p>{{ sugestion.description }}</p>
-		<span>{{ sugestion.pub_date }}</span>
+		<div class="row">
+			<div class="col s12">
+				<div class="map-sugestions">
+					<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAuO8A9xgTDHiz0KpIc1Vdwe8heg9K1Fj0&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="position">
+					<span class="badge left">{{ sugestion.id }}</span>
+					<h1>{{ sugestion.title }}</h1>	
+				</div>
+				<div class="indicators">					
+					<span class="pub-date clear left">{{ sugestion.pub_date }}</span>
+					<a href=""><i class="material-icons">arrow_upward</i></a>
+					<a href=""><i class="material-icons">arrow_downward</i></a>
+				</div>						
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<article>
+					{{ sugestion.description }}
+				</article>		
+			</div>
+		</div>
 	</div>
 	
 {% endblock %}
