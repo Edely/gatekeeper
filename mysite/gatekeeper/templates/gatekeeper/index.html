@@ -3,18 +3,35 @@
 
 {% block content %}
 <div class="container">
+
 	<div class="row">
 		<div class="col s12">
-			<div class="header">
-				<h1>Vigilante</h1>
-				<h2>Sugestão de Pautas</h2>	
+			<div class="map-sugestions">
+				<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAuO8A9xgTDHiz0KpIc1Vdwe8heg9K1Fj0&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<div class="search-header">
+				<div class="input-field">
+				<i class="material-icons prefix">search</i>
+					<label for="search"></label>					
+					<input type="text" name="search" id="search">	
+				</div>
 			</div>
 			<div class="last-entries">
-				<ul>
-					{% for sugestion in all_sugestions %}
-					<li> <a href="/gatekeeper/{{ sugestion.id }}">{{ sugestion.title }}</a></li>
-					{% endfor %}
-				</ul>
+				{% for sugestion in all_sugestions %}
+				<div class="col s12 m6">
+					<div class="card">
+						<div class="card-content">
+							<div class="card-title">{{ sugestion.title }} <span class="badge">{{ sugestion.id }}</span></div>
+							<p>{{ sugestion.description|truncatewords:30 }}</p>
+						</div>
+						<div class="card-action"><a href="/gatekeeper/{{ sugestion.id }}">Leia Mais</a></div>
+					</div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -12,8 +12,6 @@ def index(request):
 	Renders the initial page
 	"""
 	all_sugestions = Sugestion.objects.all()
-	for sugestion in all_sugestions:
-		print(sugestion.id)
 
 	return render(request,'gatekeeper/index.html', {'all_sugestions': all_sugestions} )
 
