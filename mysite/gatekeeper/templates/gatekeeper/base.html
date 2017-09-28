@@ -12,14 +12,9 @@
 	{% endblock %}
 
 </head>
-<body>
-<header>
-	<nav>
-		<div class="nav-wrapper">
-			<a href="#" class="brand-logo">Vigilante</a>
-		</div>
-	</nav>        
-</header>
+<body>	
+{% include "header.html" %}
+	<div class="container">
 {% block content %}
 
 {% endblock %}
@@ -28,5 +23,6 @@
 	<script src="{% static 'gatekeeper/js/materialize.js' %}"></script>
 	<script src="{% static 'gatekeeper/scripts.js' %}"></script>
 {% endblock %}
+	</div>
 </body>
 </html>

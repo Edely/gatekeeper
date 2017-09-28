@@ -37,4 +37,4 @@ class Citizen(User):
 	"""
 	People whom make sugestions of pitch.
 	"""	
-	neighbourhood = models.CharField(max_length=80)	
+	neighbourhood = models.CharField(max_length=80)

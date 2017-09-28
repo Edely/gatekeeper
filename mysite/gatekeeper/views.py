@@ -41,3 +41,8 @@ def add_sugestion(request):
 
 
 	return render(request, 'gatekeeper/add_sugestion.html', {'form':form})
+
+def sign_in(request):
+	
+	return render(request, 'gatekeeper/sign_in.html')
+	
