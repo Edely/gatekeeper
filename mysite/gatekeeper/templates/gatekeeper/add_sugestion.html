@@ -10,7 +10,6 @@
 			<div class="row">
 				<form action="{% url 'gatekeeper:add_sugestion' %}" method="POST">
 					{% csrf_token %}
-
 					 <div class="input-filed col s12">
 						<label for="title">Title</label>
 						{{ form.title }}
@@ -29,7 +28,6 @@
 					<button class="btn waves-effect waves-light" type="submit" name="action">
 						Submit
 					</button>
-
 				</form>			
 			</div>
 		</div>

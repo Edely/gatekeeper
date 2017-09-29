@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from .forms import SugestionForm
+from .forms import SugestionForm, SigninForm
 from django.utils import timezone
-
 
 from .models import Sugestion
 
@@ -43,6 +42,20 @@ def add_sugestion(request):
 	return render(request, 'gatekeeper/add_sugestion.html', {'form':form})
 
 def sign_in(request):
+	if request.method == 'POST':			
+		form = SigninForm(request.POST)
+		
+		if form.is_valid():
+			sign_in = form.save(commit=False)
+			sign_in.pub_date = timezone.now()
+			sign_in.save()
+			print('valid')
+			
+			return HttpResponseRedirect(reverse('gatekeeper:sign_in'))
+		else:
+			print('not valid')
+	else:
+		form = SigninForm()
 	
-	return render(request, 'gatekeeper/sign_in.html')
+	return render(request, 'gatekeeper/sign_in.html', {'form': form})
 	

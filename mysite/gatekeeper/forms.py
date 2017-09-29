@@ -20,8 +20,12 @@ class SigninForm(forms.ModelForm):
 	"""
 	class Meta:
 		model = Citizen
-		fields = {'neighbourhood', 'username', 'password', 'email', 'first_name', 'last_name'}
+		fields = {'neighbourhood', 'username', 'email', 'first_name', 'last_name'}
 		widgets = {
-			'neighbourhood': forms.Textarea(attrs={'class': 'validate'}),
-			'username': forms.TextInput(attrs={'class': 'validate'})
+			'neighbourhood': forms.TextInput(attrs={'class': 'validate'}),
+			'name': forms.TextInput(attrs={'class': 'validate'}),
+			'first_name': forms.TextInput(attrs={'class': 'validate'}),
+			'last_name': forms.TextInput(attrs={'class': 'validate'}),
+			'email_name': forms.EmailInput(attrs={'class': 'validate'}),
+			'password': forms.PasswordInput(attrs={'class': 'validate'}),
 		}
